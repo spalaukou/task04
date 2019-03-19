@@ -1,7 +1,6 @@
-package by.epam.javawebtraining.logic;
+package by.epam.javawebtraining.spalaukou.task04.logic;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -12,20 +11,16 @@ import java.io.IOException;
 
 public class DataReader {
 
-    String fileName = "input\\inputData.txt";
-
-    public String readFile() {
+    public static String readFile(String filePath) {
         StringBuilder stringBuilder = new StringBuilder();
 
-        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             String currentLine;
             while ((currentLine = br.readLine()) != null) {
                 stringBuilder.append(currentLine).append("\n");
             }
-        } catch (FileNotFoundException e) {
-            System.out.println("File not found exception." + e);
         } catch (IOException e) {
-            System.out.println("General I/O exception." + e);
+            e.printStackTrace();
         }
 
         return stringBuilder.toString();

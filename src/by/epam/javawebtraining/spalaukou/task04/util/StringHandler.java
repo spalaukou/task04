@@ -1,4 +1,4 @@
-package by.epam.javawebtraining.logic;
+package by.epam.javawebtraining.spalaukou.task04.util;
 
 import java.util.Arrays;
 
