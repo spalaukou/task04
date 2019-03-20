@@ -11,20 +11,20 @@ import java.util.List;
  */
 
 public class Paragraph implements Text {
-    private List<String> sentences = new ArrayList<>();
+    private List<Text> sentences = new ArrayList<>();
 
-    public void addComponent(String sentence) {
-        sentences.add(sentence);
+    public void addComponent(Text component) {
+        sentences.add(component);
     }
 
-    public void removeComponent(String sentence) {
-        sentences.remove(sentence);
+    public void removeComponent(Text component) {
+        sentences.remove(component);
     }
 
     @Override
     public void write() {
-        for(String sentence : sentences) {
-            System.out.println(sentence);
+        for(Text component : sentences) {
+            component.write();
         }
     }
 }

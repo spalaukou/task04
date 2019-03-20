@@ -1,6 +1,6 @@
 package by.epam.javawebtraining.spalaukou.task04.controller;
 
-import by.epam.javawebtraining.spalaukou.task04.logic.DataReader;
+import by.epam.javawebtraining.spalaukou.task04.logic.reader.DataReader;
 import by.epam.javawebtraining.spalaukou.task04.logic.creator.BookCreator;
 import by.epam.javawebtraining.spalaukou.task04.model.entity.Book;
 
