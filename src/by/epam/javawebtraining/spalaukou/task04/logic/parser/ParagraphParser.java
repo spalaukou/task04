@@ -1,7 +1,7 @@
 package by.epam.javawebtraining.spalaukou.task04.logic.parser;
 
 import by.epam.javawebtraining.spalaukou.task04.model.TextComposite;
-import by.epam.javawebtraining.spalaukou.task04.model.entity.Paragraph;
+import by.epam.javawebtraining.spalaukou.task04.model.entity.Book;
 
 /**
  * @author Stanislau Palaukou on 19.03.2019
@@ -10,15 +10,70 @@ import by.epam.javawebtraining.spalaukou.task04.model.entity.Paragraph;
 
 public class ParagraphParser {
     private static final String SENTENCE_PATTERN = "(^[-]|([A-Z])).+?([.]\\s?|[:]|[;]|[\\w]$)";
+    private static final String FIRST_SENTENCE_PATTERN = "^([A-Z]|[-])((.+?[.]\\s?)|(.+)[\\w]([:]|[;])?)";
+    private static final String REST_PATTERN = "^([A-Z]|[-])((.+?[.]\\s?)|(.+)[\\w]([:]|[;])?)";
+
+    private static final String NEWSENTENCE_PATTERN = ".";
+    private static final String ENUMERATION_PATTERN = ":";
 
     public static TextComposite parse(String initialString) {
-        String[] splitted = initialString.split(SENTENCE_PATTERN);
 
-        TextComposite paragraph = new Paragraph();
+        TextComposite paragraph = new Book();
 
-        for(String string: splitted) {
-            paragraph.addElement(SentenceParser.parse(string));
+        if(initialString.length() - 1 == initialString.lastIndexOf(ENUMERATION_PATTERN)) {
+            if(!initialString.contains(NEWSENTENCE_PATTERN)) {
+                paragraph.addElement(SentenceParser.parse(initialString));
+            } else {
+                String[] splitted = initialString.split(NEWSENTENCE_PATTERN);
+                for(int i = 0; i < splitted.length; i++) {
+                    if(i < splitted.length - 1) {
+                        paragraph.addElement(SentenceParser.parse(initialString + "."));
+                    } else {
+                        paragraph.addElement(SentenceParser.parse(initialString + ":"));
+                    }
+                }
+            }
+        } else if(initialString.contains(NEWSENTENCE_PATTERN)) {
+            String[] splitted = initialString.split(".");
+            for(String string: splitted) {
+                paragraph.addElement(SentenceParser.parse(initialString + "."));
+            }
+        } else {
+            paragraph.addElement(SentenceParser.parse(initialString));
         }
+
         return paragraph;
     }
+
+//    public static TextComposite parse(String initialString) {
+//
+//        TextComposite paragraph = new Book();
+//
+//        if(initialString.length() - 1 == initialString.lastIndexOf(ENUMERATION_PATTERN)) {
+//            System.out.println(initialString);
+//
+//            String[] splitted = initialString.split(NEWSENTENCE_PATTERN);
+//            if(splitted.length == 1) {
+//
+//            }
+//            for(String string : splitted) {
+//                int count = 1;
+//                if(!(count == splitted.length)) {
+//                    paragraph.addElement(SentenceParser.parse(string + NEWSENTENCE_PATTERN));
+//                    count++;
+//                } else {
+//                    paragraph.addElement(SentenceParser.parse(string + ENUMERATION_PATTERN));
+//                }
+//            }
+//        } else if(initialString.contains(NEWSENTENCE_PATTERN)) {
+//            String[] splitted = initialString.split(NEWSENTENCE_PATTERN);
+//            for(String string : splitted) {
+//                paragraph.addElement(SentenceParser.parse(string + "."));
+//            }
+//        } else {
+//            paragraph.addElement(SentenceParser.parse(initialString));
+//        }
+//
+//        return paragraph;
+//    }
 }
