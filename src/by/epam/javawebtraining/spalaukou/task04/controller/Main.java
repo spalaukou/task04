@@ -2,7 +2,7 @@ package by.epam.javawebtraining.spalaukou.task04.controller;
 
 import by.epam.javawebtraining.spalaukou.task04.logic.reader.DataReader;
 import by.epam.javawebtraining.spalaukou.task04.logic.creator.BookCreator;
-import by.epam.javawebtraining.spalaukou.task04.model.entity.Book;
+import by.epam.javawebtraining.spalaukou.task04.model.TextComposite;
 
 /**
  * @author Stanislau Palaukou on 15.03.2019
@@ -14,10 +14,10 @@ public class Main {
         //Reading text from file
         String initialText = DataReader.readFile("input\\inputData.txt");
 
-        //Creating book in memory
-        Book book = BookCreator.create(initialText);
+        //Creating book in Composite
+        TextComposite book = BookCreator.create(initialText);
 
-        //Extracting Book to console/file
+        //Extracting Book to console
         System.out.println(book);
 
     }

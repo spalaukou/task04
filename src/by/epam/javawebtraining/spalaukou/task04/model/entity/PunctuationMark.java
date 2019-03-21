@@ -1,13 +1,14 @@
 package by.epam.javawebtraining.spalaukou.task04.model.entity;
 
-import by.epam.javawebtraining.spalaukou.task04.model.TextComponent;
+import by.epam.javawebtraining.spalaukou.task04.model.SimpleTextElement;
 
 /**
  * @author Stanislau Palaukou on 21.03.2019
  * @project WordsCalculator
  */
 
-public class PunctuationMark implements TextComponent {
+public class PunctuationMark implements SimpleTextElement {
+    private static final String NAME = "Punctuation Mark";
     private String value;
 
     public PunctuationMark(String value) {
@@ -15,11 +16,8 @@ public class PunctuationMark implements TextComponent {
     }
 
     @Override
-    public void addComponent(TextComponent component) {
-    }
-
-    @Override
-    public void removeComponent(TextComponent component) {
+    public String getTextElementName() {
+        return NAME;
     }
 
     @Override

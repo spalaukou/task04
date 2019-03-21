@@ -1,13 +1,14 @@
 package by.epam.javawebtraining.spalaukou.task04.model.entity;
 
-import by.epam.javawebtraining.spalaukou.task04.model.TextComponent;
+import by.epam.javawebtraining.spalaukou.task04.model.SimpleTextElement;
 
 /**
  * @author Stanislau Palaukou on 19.03.2019
  * @project WordsCalculator
  */
 
-public class CodeBlock implements TextComponent {
+public class CodeBlock implements SimpleTextElement {
+    private static final String NAME = "Code Block";
     private String value;
 
     public CodeBlock(String value) {
@@ -15,11 +16,8 @@ public class CodeBlock implements TextComponent {
     }
 
     @Override
-    public void addComponent(TextComponent component) {
-    }
-
-    @Override
-    public void removeComponent(TextComponent component) {
+    public String getTextElementName() {
+        return NAME;
     }
 
     @Override

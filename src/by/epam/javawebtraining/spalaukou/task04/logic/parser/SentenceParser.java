@@ -1,5 +1,6 @@
 package by.epam.javawebtraining.spalaukou.task04.logic.parser;
 
+import by.epam.javawebtraining.spalaukou.task04.model.TextComposite;
 import by.epam.javawebtraining.spalaukou.task04.model.entity.PunctuationMark;
 import by.epam.javawebtraining.spalaukou.task04.model.entity.Sentence;
 import by.epam.javawebtraining.spalaukou.task04.model.entity.Word;
@@ -12,16 +13,16 @@ import by.epam.javawebtraining.spalaukou.task04.model.entity.Word;
 public class SentenceParser {
     private static final String WORD_PATTERN = "";
 
-    public static Sentence parse(String initialString) {
+    public static TextComposite parse(String initialString) {
         String[] splitted = initialString.split(" ");
 
-        Sentence sentence = new Sentence();
+        TextComposite sentence = new Sentence();
 
         for(String string: splitted) {
             if(string.matches(WORD_PATTERN)) {
-                sentence.addComponent(new Word(string));
+                sentence.addElement(new Word(string));
             } else {
-                //sentence.addComponent(new PunctuationMark(string));
+                sentence.addElement(new PunctuationMark(string));
             }
         }
         return sentence;

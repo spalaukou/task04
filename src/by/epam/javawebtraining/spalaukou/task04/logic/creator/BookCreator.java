@@ -1,7 +1,7 @@
 package by.epam.javawebtraining.spalaukou.task04.logic.creator;
 
 import by.epam.javawebtraining.spalaukou.task04.logic.parser.BookParser;
-import by.epam.javawebtraining.spalaukou.task04.model.entity.Book;
+import by.epam.javawebtraining.spalaukou.task04.model.TextComposite;
 
 /**
  * @author Stanislau Palaukou on 19.03.2019
@@ -9,8 +9,7 @@ import by.epam.javawebtraining.spalaukou.task04.model.entity.Book;
  */
 
 public class BookCreator {
-    public static Book create(String initialText) {
-
+    public static TextComposite create(String initialText) {
         return BookParser.parse(initialText);
     }
 }

@@ -1,6 +1,7 @@
 package by.epam.javawebtraining.spalaukou.task04.model.entity;
 
-import by.epam.javawebtraining.spalaukou.task04.model.TextComponent;
+import by.epam.javawebtraining.spalaukou.task04.model.SimpleTextElement;
+import by.epam.javawebtraining.spalaukou.task04.model.TextComposite;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,17 +11,23 @@ import java.util.List;
  * @project WordsCalculator
  */
 
-public class Sentence implements TextComponent {
-    private List<TextComponent> simpleTextElements = new ArrayList<>();
+public class Sentence implements TextComposite {
+    private static final String NAME = "Sentence";
+    private List<SimpleTextElement> simpleTextElements = new ArrayList<>();
 
     @Override
-    public void addComponent(TextComponent component) {
-        simpleTextElements.add(component);
+    public String getTextElementName() {
+        return NAME;
     }
 
     @Override
-    public void removeComponent(TextComponent component) {
-        simpleTextElements.remove(component);
+    public void addElement(SimpleTextElement element) {
+        simpleTextElements.add(element);
+    }
+
+    @Override
+    public void removeElement(SimpleTextElement element) {
+        simpleTextElements.remove(element);
     }
 
     @Override

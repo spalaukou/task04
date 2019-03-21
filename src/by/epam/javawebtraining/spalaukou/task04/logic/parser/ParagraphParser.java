@@ -1,5 +1,6 @@
 package by.epam.javawebtraining.spalaukou.task04.logic.parser;
 
+import by.epam.javawebtraining.spalaukou.task04.model.TextComposite;
 import by.epam.javawebtraining.spalaukou.task04.model.entity.Paragraph;
 
 /**
@@ -8,18 +9,15 @@ import by.epam.javawebtraining.spalaukou.task04.model.entity.Paragraph;
  */
 
 public class ParagraphParser {
-    private static final String SENTENCE_PATTERN = "";
+    private static final String SENTENCE_PATTERN = "(^[-]|([A-Z])).+?([.]\\s?|[:]|[;]|[\\w]$)";
 
-    public static Paragraph parse(String initialString) {
-        System.out.println(initialString);
-        String[] splitted = initialString.split(". ");
+    public static TextComposite parse(String initialString) {
+        String[] splitted = initialString.split(SENTENCE_PATTERN);
 
-        Paragraph paragraph = new Paragraph();
+        TextComposite paragraph = new Paragraph();
 
         for(String string: splitted) {
-            if(string.matches(SENTENCE_PATTERN)) {
-                paragraph.addComponent(SentenceParser.parse(string));
-            }
+            paragraph.addElement(SentenceParser.parse(string));
         }
         return paragraph;
     }
