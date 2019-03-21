@@ -1,4 +1,4 @@
-package by.epam.javawebtraining.spalaukou.task04.logic;
+package by.epam.javawebtraining.spalaukou.task04.logic.reader;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
