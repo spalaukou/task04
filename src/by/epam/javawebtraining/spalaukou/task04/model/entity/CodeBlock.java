@@ -22,7 +22,7 @@ public class CodeBlock implements SimpleTextElement {
 
     @Override
     public String toString() {
-        return value.toString();
+        return value + "\n";
     }
 
 }

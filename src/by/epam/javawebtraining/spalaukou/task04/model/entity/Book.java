@@ -32,7 +32,12 @@ public class Book implements TextComposite {
 
     @Override
     public String toString() {
-        return textBlocks.toString();
+        StringBuilder stringBuilder = new StringBuilder();
+        for(SimpleTextElement simpleTextElement : textBlocks) {
+            stringBuilder.append(simpleTextElement);
+        }
+        stringBuilder.append("\n");
+        return stringBuilder.toString();
     }
 
 }

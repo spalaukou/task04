@@ -22,6 +22,6 @@ public class Word implements SimpleTextElement {
 
     @Override
     public String toString() {
-        return value.toString();
+        return value;
     }
 }

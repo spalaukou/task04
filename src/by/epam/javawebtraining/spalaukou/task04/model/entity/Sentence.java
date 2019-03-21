@@ -32,6 +32,10 @@ public class Sentence implements TextComposite {
 
     @Override
     public String toString() {
-        return simpleTextElements.toString();
+        StringBuilder stringBuilder = new StringBuilder();
+        for(SimpleTextElement simpleTextElement : simpleTextElements) {
+            stringBuilder.append(simpleTextElement);
+        }
+        return stringBuilder.toString();
     }
 }

@@ -22,7 +22,7 @@ public static int sumEven(List<Integer> li) {
 			sum += i;
 		return sum;
 }
-Because the remainder (%) and unary plus (+=) operators do not apply to Integer objects, you may wonder why the Java compiler compiles the method without issuing any errors. The сompiler does not generate an error because it invokes the intValue method to convert an Integer to an int at runtime:
+Because the remainder (%) and unary plus (+=) operators do not apply to Integer objects, you may wonder why the Java compiler compiles the method without issuing any errors. The compiler does not generate an error because it invokes the intValue method to convert an Integer to an int at runtime:
 public static int sumEven(List<Integer> li) {
 	int sum = 0;
 	for (Integer i : li)

@@ -32,6 +32,11 @@ public class Paragraph implements TextComposite {
 
     @Override
     public String toString() {
-        return sentences.toString();
+        StringBuilder stringBuilder = new StringBuilder();
+        for(SimpleTextElement simpleTextElement : sentences) {
+            stringBuilder.append(simpleTextElement);
+        }
+        stringBuilder.append("\n");
+        return stringBuilder.toString();
     }
 }
