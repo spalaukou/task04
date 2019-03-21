@@ -1,6 +1,6 @@
 package by.epam.javawebtraining.spalaukou.task04.model.entity;
 
-import by.epam.javawebtraining.spalaukou.task04.model.Text;
+import by.epam.javawebtraining.spalaukou.task04.model.TextComponent;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,21 +10,22 @@ import java.util.List;
  * @project WordsCalculator
  */
 
-public class Book implements Text {
-    private List<Text> paragraphs = new ArrayList<>();
+public class Book implements TextComponent {
+    private List<TextComponent> textBlocks = new ArrayList<>();
 
-    public void addComponent(Text component) {
-        paragraphs.add(component);
-    }
-
-    public void removeComponent(Text component) {
-        paragraphs.remove(component);
+    @Override
+    public void addComponent(TextComponent component) {
+        textBlocks.add(component);
     }
 
     @Override
-    public void write() {
-        for(Text component : paragraphs) {
-            component.write();
-        }
+    public void removeComponent(TextComponent component) {
+        textBlocks.remove(component);
     }
+
+    @Override
+    public String toString() {
+        return textBlocks.toString();
+    }
+
 }

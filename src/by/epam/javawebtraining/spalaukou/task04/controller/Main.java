@@ -18,6 +18,7 @@ public class Main {
         Book book = BookCreator.create(initialText);
 
         //Extracting Book to console/file
-        book.write();
+        System.out.println(book);
+
     }
 }
