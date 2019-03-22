@@ -1,7 +1,7 @@
 package by.epam.javawebtraining.spalaukou.task04.logic.parser;
 
 import by.epam.javawebtraining.spalaukou.task04.model.TextComposite;
-import by.epam.javawebtraining.spalaukou.task04.model.entity.Book;
+import by.epam.javawebtraining.spalaukou.task04.model.entity.Paragraph;
 
 /**
  * @author Stanislau Palaukou on 19.03.2019
@@ -14,7 +14,7 @@ public class ParagraphParser {
 
     public static TextComposite parse(String initialString) {
 
-        TextComposite paragraph = new Book();
+        TextComposite paragraph = new Paragraph();
 
         if(initialString.length() - 1 == initialString.lastIndexOf(ENUMERATION_PATTERN)) {
             if(!initialString.contains(NEWSENTENCE_PATTERN)) {

@@ -33,8 +33,11 @@ public class Sentence implements TextComposite {
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
-        for(SimpleTextElement simpleTextElement : simpleTextElements) {
-            stringBuilder.append(simpleTextElement);
+        for(int i = 0; i < simpleTextElements.size(); i++) {
+            stringBuilder.append(simpleTextElements.get(i));
+            if(i == simpleTextElements.size() - 1) {
+                stringBuilder.append("\r\n");
+            }
         }
         return stringBuilder.toString();
     }

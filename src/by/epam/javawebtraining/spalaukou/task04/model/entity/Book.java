@@ -4,6 +4,7 @@ import by.epam.javawebtraining.spalaukou.task04.model.SimpleTextElement;
 import by.epam.javawebtraining.spalaukou.task04.model.TextComposite;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -36,8 +37,6 @@ public class Book implements TextComposite {
         for(SimpleTextElement simpleTextElement : textBlocks) {
             stringBuilder.append(simpleTextElement);
         }
-        stringBuilder.append("\n");
         return stringBuilder.toString();
     }
-
 }

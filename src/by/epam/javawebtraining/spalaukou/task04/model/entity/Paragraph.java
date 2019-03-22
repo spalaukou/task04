@@ -36,7 +36,6 @@ public class Paragraph implements TextComposite {
         for(SimpleTextElement simpleTextElement : sentences) {
             stringBuilder.append(simpleTextElement);
         }
-        stringBuilder.append("\n");
         return stringBuilder.toString();
     }
 }

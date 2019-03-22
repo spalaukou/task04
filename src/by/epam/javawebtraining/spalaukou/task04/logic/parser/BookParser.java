@@ -3,6 +3,9 @@ package by.epam.javawebtraining.spalaukou.task04.logic.parser;
 import by.epam.javawebtraining.spalaukou.task04.model.TextComposite;
 import by.epam.javawebtraining.spalaukou.task04.model.entity.Book;
 import by.epam.javawebtraining.spalaukou.task04.model.entity.CodeBlock;
+import by.epam.javawebtraining.spalaukou.task04.model.entity.Paragraph;
+
+import java.util.Arrays;
 
 /**
  * @author Stanislau Palaukou on 21.03.2019
