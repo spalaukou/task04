@@ -5,14 +5,12 @@ import by.epam.javawebtraining.spalaukou.task04.model.entity.PunctuationMark;
 import by.epam.javawebtraining.spalaukou.task04.model.entity.Sentence;
 import by.epam.javawebtraining.spalaukou.task04.model.entity.Word;
 
-import java.util.Arrays;
-
 /**
  * @author Stanislau Palaukou on 21.03.2019
  * @project WordsCalculator
  */
 
-public class SentenceParser {
+public class SentenceParser extends TextParser {
     private static final String WORDSTRING_PATTERN = "^\\w+$";
     private static final String NONWORDSTRING_PATTERN = "^\\W+$";
     private static final String WORD_PATTERN = "\\w+";
@@ -23,7 +21,11 @@ public class SentenceParser {
     private static final String NONWORDEND_PATTERN = "^\\w+\\W+$";
     private static final String WORDMIDDLE_PATTERN = "^\\W+\\w+\\W+$";
 
-    public static TextComposite parse(String initialString) {
+    public SentenceParser() {
+    }
+
+    @Override
+    public TextComposite parse(String initialString) {
         String[] splitted = initialString.split(SPACE_PATTERN);
 
         TextComposite sentence = new Sentence();

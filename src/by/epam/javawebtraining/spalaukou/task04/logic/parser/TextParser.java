@@ -1,27 +1,24 @@
 package by.epam.javawebtraining.spalaukou.task04.logic.parser;
 
-
-import by.epam.javawebtraining.spalaukou.task04.model.SimpleTextElement;
+import by.epam.javawebtraining.spalaukou.task04.model.TextComposite;
 
 /**
  * @author Stanislau Palaukou on 22.03.2019
  * @project task04
  */
 
-public abstract class TextParser {
-  TextParser nextParser;
+public abstract class TextParser implements Parser {
+  protected TextParser next;
 
-  void setNextParser(TextParser textParser){
-    nextParser = textParser;
-  }
+  public TextParser(){}
 
-  void start(String string) {
-    parse(string);
-    if(nextParser != null) {
-      nextParser.start(string);
+  public TextParser(TextParser next) {
+    if(next != null) {
+      this.next = next;
     }
   }
 
-  abstract SimpleTextElement parse(String string);
+  @Override
+  public abstract TextComposite parse(String initialString);
 
 }

@@ -1,9 +1,5 @@
 package by.epam.javawebtraining.spalaukou.task04.controller;
 
-import by.epam.javawebtraining.spalaukou.task04.logic.parser.BookParser;
-import by.epam.javawebtraining.spalaukou.task04.logic.parser.ParagraphParser;
-import by.epam.javawebtraining.spalaukou.task04.logic.parser.SentenceParser;
-import by.epam.javawebtraining.spalaukou.task04.logic.parser.TextParser;
 import by.epam.javawebtraining.spalaukou.task04.logic.reader.DataReader;
 import by.epam.javawebtraining.spalaukou.task04.logic.creator.BookCreator;
 import by.epam.javawebtraining.spalaukou.task04.model.TextComposite;
@@ -17,8 +13,8 @@ import by.epam.javawebtraining.spalaukou.task04.view.PrinterCreator;
 
 public class Main {
     public static void main(String[] args) {
-
-
+        //Initializing printer
+        Printable printer = PrinterCreator.create(PrinterCreator.printerType.FILE);
 
         //Reading text from file
         String initialText = DataReader.readFile("input\\inputData.txt");
@@ -27,7 +23,6 @@ public class Main {
         TextComposite book = BookCreator.create(initialText);
 
         //Extracting Book
-        Printable printer = PrinterCreator.create(PrinterCreator.printerType.FILE);
         printer.print(book);
 
     }

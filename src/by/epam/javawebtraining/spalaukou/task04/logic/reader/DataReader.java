@@ -19,10 +19,14 @@ public class DataReader {
             while ((currentLine = br.readLine()) != null) {
                 stringBuilder.append(currentLine).append("\n");
             }
+
+            if (stringBuilder.length() > 0) {
+                stringBuilder.setLength(stringBuilder.length() - 1);
+            }
+
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         return stringBuilder.toString();
     }
 

@@ -36,6 +36,7 @@ public class Paragraph implements TextComposite {
         for(SimpleTextElement simpleTextElement : sentences) {
             stringBuilder.append(simpleTextElement);
         }
+        stringBuilder.delete(stringBuilder.length() - 1, stringBuilder.length());
         return stringBuilder.toString();
     }
 }

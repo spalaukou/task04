@@ -16,7 +16,7 @@ public class FilePrinter implements Printable {
     try (Writer bufferedWriter = new BufferedWriter(new OutputStreamWriter(
             new FileOutputStream(new File(fileName))))) {
 
-      bufferedWriter.write(o.toString() + "\n");
+      bufferedWriter.write(o.toString());
 
     } catch (IOException e) {
       e.printStackTrace();
