@@ -46,7 +46,7 @@ public class Unboxing {
 		System.out.println("absolute value of " + i + " = " + absVal);
 
 		List<Double> ld = new ArrayList<>();
-		ld.add(3.1416); // ? is autoboxed through method invocation.
+		ld.add(3.1416); // Π is autoboxed through method invocation.
 
 		// 2. Unboxing through assignment
 		double pi = ld.get(0);
