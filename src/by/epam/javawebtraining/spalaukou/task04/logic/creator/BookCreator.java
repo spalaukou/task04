@@ -1,7 +1,7 @@
 package by.epam.javawebtraining.spalaukou.task04.logic.creator;
 
 import by.epam.javawebtraining.spalaukou.task04.logic.parser.ChainParserCreator;
-import by.epam.javawebtraining.spalaukou.task04.model.TextComposite;
+import by.epam.javawebtraining.spalaukou.task04.model.entity.TextComposite;
 
 /**
  * @author Stanislau Palaukou on 19.03.2019

@@ -1,8 +1,5 @@
 package by.epam.javawebtraining.spalaukou.task04.model.entity;
 
-import by.epam.javawebtraining.spalaukou.task04.model.SimpleTextElement;
-import by.epam.javawebtraining.spalaukou.task04.model.TextComposite;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +10,12 @@ import java.util.List;
 
 public class Paragraph implements TextComposite {
     private static final String NAME = "Paragraph";
+
     private List<SimpleTextElement> sentences = new ArrayList<>();
+
+    public List<SimpleTextElement> getSentences() {
+        return sentences;
+    }
 
     @Override
     public String getTextElementName() {
@@ -35,6 +37,7 @@ public class Paragraph implements TextComposite {
         StringBuilder stringBuilder = new StringBuilder();
         for(SimpleTextElement simpleTextElement : sentences) {
             stringBuilder.append(simpleTextElement);
+            stringBuilder.append("\r");
         }
         stringBuilder.delete(stringBuilder.length() - 1, stringBuilder.length());
         return stringBuilder.toString();

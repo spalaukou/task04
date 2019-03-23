@@ -1,8 +1,5 @@
 package by.epam.javawebtraining.spalaukou.task04.model.entity;
 
-import by.epam.javawebtraining.spalaukou.task04.model.SimpleTextElement;
-import by.epam.javawebtraining.spalaukou.task04.model.TextComposite;
-
 import java.util.ArrayList;
 import java.util.List;
 

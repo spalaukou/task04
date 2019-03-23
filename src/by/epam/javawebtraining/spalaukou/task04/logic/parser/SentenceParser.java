@@ -1,6 +1,6 @@
 package by.epam.javawebtraining.spalaukou.task04.logic.parser;
 
-import by.epam.javawebtraining.spalaukou.task04.model.TextComposite;
+import by.epam.javawebtraining.spalaukou.task04.model.entity.TextComposite;
 import by.epam.javawebtraining.spalaukou.task04.model.entity.PunctuationMark;
 import by.epam.javawebtraining.spalaukou.task04.model.entity.Sentence;
 import by.epam.javawebtraining.spalaukou.task04.model.entity.Word;

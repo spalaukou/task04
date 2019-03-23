@@ -1,8 +1,9 @@
 package by.epam.javawebtraining.spalaukou.task04.controller;
 
+import by.epam.javawebtraining.spalaukou.task04.logic.SentenceSorter;
 import by.epam.javawebtraining.spalaukou.task04.logic.reader.DataReader;
 import by.epam.javawebtraining.spalaukou.task04.logic.creator.BookCreator;
-import by.epam.javawebtraining.spalaukou.task04.model.TextComposite;
+import by.epam.javawebtraining.spalaukou.task04.model.entity.TextComposite;
 import by.epam.javawebtraining.spalaukou.task04.view.Printable;
 import by.epam.javawebtraining.spalaukou.task04.view.PrinterCreator;
 
@@ -23,7 +24,10 @@ public class Main {
         TextComposite book = BookCreator.create(initialText);
 
         //Extracting Book
-        printer.print(book);
+        //printer.print(book);
+
+        //Sorting book
+        SentenceSorter.sortIncrease(book);
 
     }
 }

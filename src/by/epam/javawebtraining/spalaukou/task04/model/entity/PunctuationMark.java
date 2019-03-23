@@ -1,7 +1,5 @@
 package by.epam.javawebtraining.spalaukou.task04.model.entity;
 
-import by.epam.javawebtraining.spalaukou.task04.model.SimpleTextElement;
-
 /**
  * @author Stanislau Palaukou on 21.03.2019
  * @project WordsCalculator
