@@ -28,6 +28,9 @@ public class Main {
 
         //Sorting book
         SentenceSorter.sortByAscending(book);
+        SentenceSorter.sortByDescending(book);
+
+        SentenceSorter.sortByWordsByAscending(book);
 
     }
 }
