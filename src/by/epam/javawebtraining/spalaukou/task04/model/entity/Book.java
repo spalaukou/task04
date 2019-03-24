@@ -11,13 +11,30 @@ import java.util.Objects;
 
 public class Book implements TextComposite {
     private static final String NAME = "Book";
-    private List<SimpleTextElement> textBlocks = new ArrayList<>();
+    private List<SimpleTextElement> lines = new ArrayList<>();
 
     public Book() {}
 
+    public Book(List<SimpleTextElement> lines) {
+        if(lines != null) {
+            this.lines = lines;
+        }
+    }
+
     public Book(TextComposite book) {
-        if (book != null && book.getTextElementName().equals(Book.NAME)) {
-            this.textBlocks = ((Book) book).getTextBlocks();
+        if (book != null) {
+            this.lines = ((Book) book).getChildren();
+        }
+    }
+
+    @Override
+    public List<SimpleTextElement> getChildren() {
+        return lines;
+    }
+
+    public void setLines(List<SimpleTextElement> lines) {
+        if(lines != null) {
+            this.lines = lines;
         }
     }
 
@@ -28,39 +45,35 @@ public class Book implements TextComposite {
 
     @Override
     public void addElement(SimpleTextElement element) {
-        textBlocks.add(element);
+        if (element != null) {
+            lines.add(element);
+        }
     }
 
     @Override
     public void removeElement(SimpleTextElement element) {
-        textBlocks.remove(element);
-    }
-
-    public List<SimpleTextElement> getTextBlocks() {
-        return textBlocks;
-    }
-
-    public void setTextBlocks(List<SimpleTextElement> textBlocks) {
-        this.textBlocks = textBlocks;
+        if(element != null) {
+            lines.remove(element);
+        }
     }
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {return true;}
+        if (o == null || getClass() != o.getClass()) {return false;}
         Book book = (Book) o;
-        return textBlocks.equals(book.textBlocks);
+        return lines.equals(book.lines);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(textBlocks);
+        return Objects.hash(lines);
     }
 
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
-        for(SimpleTextElement simpleTextElement : textBlocks) {
+        for(SimpleTextElement simpleTextElement : lines) {
             stringBuilder.append(simpleTextElement);
         }
         stringBuilder.delete(stringBuilder.length() - 2, stringBuilder.length());

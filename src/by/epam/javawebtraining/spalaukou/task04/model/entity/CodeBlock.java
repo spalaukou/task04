@@ -14,15 +14,19 @@ public class CodeBlock implements SimpleTextElement {
     public CodeBlock() {}
 
     public CodeBlock(String value) {
-        this.value = value;
+        if (value != null) {
+            this.value = value;
+        }
+    }
+
+    public CodeBlock(CodeBlock codeBlock) {
+        if (codeBlock != null) {
+            this.value = codeBlock.getValue();
+        }
     }
 
     @Override
     public String getTextElementName() {
-        return NAME;
-    }
-
-    public static String getNAME() {
         return NAME;
     }
 
@@ -31,13 +35,15 @@ public class CodeBlock implements SimpleTextElement {
     }
 
     public void setValue(String value) {
-        this.value = value;
+        if (value != null) {
+            this.value = value;
+        }
     }
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {return true;}
+        if (o == null || getClass() != o.getClass()) {return false;}
         CodeBlock codeBlock = (CodeBlock) o;
         return value.equals(codeBlock.value);
     }

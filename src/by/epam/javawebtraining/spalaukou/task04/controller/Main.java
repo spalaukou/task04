@@ -27,7 +27,7 @@ public class Main {
         //printer.print(book);
 
         //Sorting book
-        SentenceSorter.sortIncrease(book);
+        SentenceSorter.sortByAscending(book);
 
     }
 }
