@@ -10,7 +10,6 @@ import by.epam.javawebtraining.spalaukou.task04.model.entity.TextComposite;
 
 public class BookCreator {
     public static TextComposite create(String initialText) {
-
         return ChainParserCreator.create().parse(initialText);
     }
 }

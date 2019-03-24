@@ -8,11 +8,11 @@ import by.epam.javawebtraining.spalaukou.task04.model.entity.TextComposite;
  */
 
 public abstract class TextParser implements Parser {
-  protected TextParser next;
+  TextParser next;
 
-  public TextParser(){}
+  TextParser(){}
 
-  public TextParser(TextParser next) {
+  TextParser(TextParser next) {
     if(next != null) {
       this.next = next;
     }
@@ -20,5 +20,4 @@ public abstract class TextParser implements Parser {
 
   @Override
   public abstract TextComposite parse(String initialString);
-
 }

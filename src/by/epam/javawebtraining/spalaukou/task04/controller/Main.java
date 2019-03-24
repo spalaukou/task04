@@ -1,8 +1,8 @@
 package by.epam.javawebtraining.spalaukou.task04.controller;
 
-import by.epam.javawebtraining.spalaukou.task04.logic.SentenceSorter;
 import by.epam.javawebtraining.spalaukou.task04.logic.reader.DataReader;
 import by.epam.javawebtraining.spalaukou.task04.logic.creator.BookCreator;
+import by.epam.javawebtraining.spalaukou.task04.logic.sorter.*;
 import by.epam.javawebtraining.spalaukou.task04.model.entity.TextComposite;
 import by.epam.javawebtraining.spalaukou.task04.view.Printable;
 import by.epam.javawebtraining.spalaukou.task04.view.PrinterCreator;
@@ -27,10 +27,19 @@ public class Main {
         //printer.print(book);
 
         //Sorting book
-        SentenceSorter.sortByAscending(book);
-        SentenceSorter.sortByDescending(book);
+        SentenceSorter sentenceSorter = new SentenceSorter();
 
-        SentenceSorter.sortByWordsByAscending(book);
+        sentenceSorter.setSortingBehavior(new LengthByAscendingBehavior());
+        sentenceSorter.sort(book);
+
+        sentenceSorter.setSortingBehavior(new LengthByDescendingBehavior());
+        sentenceSorter.sort(book);
+
+        sentenceSorter.setSortingBehavior(new WordsByAscendingBehavior());
+        sentenceSorter.sort(book);
+
+        sentenceSorter.setSortingBehavior(new WordsByDescendingBehavior());
+        sentenceSorter.sort(book);
 
     }
 }

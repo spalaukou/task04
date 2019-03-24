@@ -21,7 +21,6 @@ public class ParagraphParser extends TextParser {
 
     @Override
     public TextComposite parse(String initialString) {
-
         TextComposite paragraph = new Paragraph();
 
         if(initialString.matches(HEADLINE_PATTERN)) {
@@ -43,7 +42,6 @@ public class ParagraphParser extends TextParser {
         } else if(initialString.matches(ENUMERATION_PATTERN)){
             paragraph.addElement(next.parse(initialString));
         }
-
 
         return paragraph;
     }
