@@ -4,6 +4,7 @@ import by.epam.javawebtraining.spalaukou.task04.logic.reader.DataReader;
 import by.epam.javawebtraining.spalaukou.task04.logic.creator.BookCreator;
 import by.epam.javawebtraining.spalaukou.task04.logic.sorter.*;
 import by.epam.javawebtraining.spalaukou.task04.model.entity.TextComposite;
+import by.epam.javawebtraining.spalaukou.task04.model.exception.TechnicalException;
 import by.epam.javawebtraining.spalaukou.task04.view.Printable;
 import by.epam.javawebtraining.spalaukou.task04.view.PrinterCreator;
 
@@ -15,10 +16,15 @@ import by.epam.javawebtraining.spalaukou.task04.view.PrinterCreator;
 public class Main {
     public static void main(String[] args) {
         //Initializing printer
-        Printable printer = PrinterCreator.create(PrinterCreator.printerType.FILE);
+        Printable printer = PrinterCreator.create(PrinterCreator.printerType.CONSOLE);
 
         //Reading text from file
-        String initialText = DataReader.readFile("input\\inputData.txt");
+        String initialText = "";
+        try {
+            initialText = DataReader.readFile("input\\inputData.txt");
+        } catch (TechnicalException e) {
+            e.printStackTrace();
+        }
 
         //Creating book in Composite
         TextComposite book = BookCreator.create(initialText);

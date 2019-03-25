@@ -8,9 +8,7 @@ import java.util.List;
  */
 
 public interface TextComposite extends SimpleTextElement {
-
     List<SimpleTextElement> getChildren();
-
     void addElement(SimpleTextElement element);
     void removeElement(SimpleTextElement element);
 }

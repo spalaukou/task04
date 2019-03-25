@@ -20,6 +20,9 @@ public class PrinterCreator {
       case FILE:
         printer = new FilePrinter();
         break;
+      case LOG:
+        printer = new LogPrinter();
+        break;
       case CONSOLE:
       default:
         printer = new ConsolePrinter();

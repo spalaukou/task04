@@ -31,10 +31,6 @@ public class Word implements SimpleTextElement {
         return NAME;
     }
 
-    public static String getNAME() {
-        return NAME;
-    }
-
     public String getValue() {
         return value;
     }
