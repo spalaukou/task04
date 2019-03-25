@@ -5,6 +5,7 @@ import by.epam.javawebtraining.spalaukou.task04.logic.creator.BookCreator;
 import by.epam.javawebtraining.spalaukou.task04.logic.sorter.*;
 import by.epam.javawebtraining.spalaukou.task04.model.entity.TextComposite;
 import by.epam.javawebtraining.spalaukou.task04.model.exception.TechnicalException;
+import by.epam.javawebtraining.spalaukou.task04.model.exception.WordsTaskException;
 import by.epam.javawebtraining.spalaukou.task04.view.Printable;
 import by.epam.javawebtraining.spalaukou.task04.view.PrinterCreator;
 import org.apache.log4j.Logger;
@@ -17,7 +18,7 @@ import org.apache.log4j.Logger;
 public class Main {
     private static final Logger logger = Logger.getRootLogger();
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws WordsTaskException {
         logger.trace("App has been launched.");
 
         //Initializing printer
