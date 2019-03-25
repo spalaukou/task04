@@ -17,7 +17,9 @@ public class Sentence implements TextComposite {
     }
 
     public Sentence(List<SimpleTextElement> simpleTextElements) {
-        this.simpleTextElements = simpleTextElements;
+        if (simpleTextElements != null) {
+            this.simpleTextElements = simpleTextElements;
+        }
     }
 
     public Sentence(Sentence sentence) {
