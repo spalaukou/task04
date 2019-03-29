@@ -7,30 +7,21 @@ import java.util.Objects;
  * @project WordsCalculator
  */
 
-public class CodeBlock implements SimpleTextElement {
-    private String value;
+public class CodeBlock extends AbstractTextElement {
 
-    public CodeBlock() {}
+    public CodeBlock() {
+        super();
+    }
 
     public CodeBlock(String value) {
         if (value != null) {
-            this.value = value;
+            super.setValue(value);
         }
     }
 
     public CodeBlock(CodeBlock codeBlock) {
         if (codeBlock != null) {
-            this.value = codeBlock.getValue();
-        }
-    }
-
-    public String getValue() {
-        return value;
-    }
-
-    public void setValue(String value) {
-        if (value != null) {
-            this.value = value;
+            super.setValue(codeBlock.getValue());
         }
     }
 
@@ -39,17 +30,17 @@ public class CodeBlock implements SimpleTextElement {
         if (this == o) {return true;}
         if (o == null || getClass() != o.getClass()) {return false;}
         CodeBlock codeBlock = (CodeBlock) o;
-        return value.equals(codeBlock.value);
+        return Objects.equals(super.getValue(), codeBlock.getValue());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(value);
+        return Objects.hash(super.getValue());
     }
 
     @Override
     public String toString() {
-        return value + "\n";
+        return super.getValue() + "\n";
     }
 
 }

@@ -7,31 +7,21 @@ import java.util.Objects;
  * @project WordsCalculator
  */
 
-public class PunctuationMark implements SimpleTextElement {
-    private String value;
+public class PunctuationMark extends AbstractTextElement {
 
     public PunctuationMark() {
+        super();
     }
 
     public PunctuationMark(String value) {
         if(value != null) {
-            this.value = value;
+            super.setValue(value);
         }
     }
 
     public PunctuationMark(PunctuationMark punctuationMark) {
         if (punctuationMark != null) {
-            this.value = punctuationMark.getValue();
-        }
-    }
-
-    public String getValue() {
-        return value;
-    }
-
-    public void setValue(String value) {
-        if(value != null) {
-            this.value = value;
+            super.setValue(punctuationMark.getValue());
         }
     }
 
@@ -39,18 +29,18 @@ public class PunctuationMark implements SimpleTextElement {
     public boolean equals(Object o) {
         if (this == o) {return true;}
         if (o == null || getClass() != o.getClass()) {return false;}
-        PunctuationMark that = (PunctuationMark) o;
-        return Objects.equals(value, that.value);
+        PunctuationMark pm = (PunctuationMark) o;
+        return Objects.equals(super.getValue(), pm.getValue());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(value);
+        return Objects.hash(super.getValue());
     }
 
     @Override
     public String toString() {
-        return value;
+        return super.getValue();
     }
 }
 

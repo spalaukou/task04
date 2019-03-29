@@ -1,6 +1,5 @@
 package by.epam.javawebtraining.spalaukou.task04.model.entity;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -9,47 +8,21 @@ import java.util.Objects;
  * @project WordsCalculator
  */
 
-public class Book implements TextComposite {
-    private List<SimpleTextElement> lines;
+public class Book extends AbstractTextComposite {
 
     public Book() {
-        lines = new ArrayList<>();
+        super();
     }
 
-    public Book(List<SimpleTextElement> lines) {
-        if(lines != null) {
-            this.lines = lines;
+    public Book(List<SimpleTextElement> simpleTextElements) {
+        if (simpleTextElements != null) {
+            super.setSimpleTextElements(simpleTextElements);
         }
     }
 
     public Book(TextComposite book) {
         if (book != null) {
-            this.lines = book.getChildren();
-        }
-    }
-
-    @Override
-    public List<SimpleTextElement> getChildren() {
-        return lines;
-    }
-
-    public void setLines(List<SimpleTextElement> lines) {
-        if(lines != null) {
-            this.lines = lines;
-        }
-    }
-
-    @Override
-    public void addElement(SimpleTextElement element) {
-        if (element != null) {
-            lines.add(element);
-        }
-    }
-
-    @Override
-    public void removeElement(SimpleTextElement element) {
-        if(element != null) {
-            lines.remove(element);
+            super.setSimpleTextElements(book.getChildren());
         }
     }
 
@@ -58,18 +31,18 @@ public class Book implements TextComposite {
         if (this == o) {return true;}
         if (o == null || getClass() != o.getClass()) {return false;}
         Book book = (Book) o;
-        return lines.equals(book.lines);
+        return Objects.equals(super.getChildren(), book.getChildren());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(lines);
+        return Objects.hash(super.getChildren());
     }
 
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
-        for(SimpleTextElement simpleTextElement : lines) {
+        for(SimpleTextElement simpleTextElement : super.getChildren()) {
             stringBuilder.append(simpleTextElement);
         }
         stringBuilder.delete(stringBuilder.length() - 1, stringBuilder.length());

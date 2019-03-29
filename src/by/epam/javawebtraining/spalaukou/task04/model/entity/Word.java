@@ -7,31 +7,21 @@ import java.util.Objects;
  * @project WordsCalculator
  */
 
-public class Word implements SimpleTextElement {
-    private String value;
+public class Word extends AbstractTextElement {
 
     public Word() {
+        super();
     }
 
     public Word(String value) {
         if(value != null) {
-            this.value = value;
+            super.setValue(value);
         }
     }
 
     public Word(Word word) {
         if(word != null) {
-            this.value = word.getValue();
-        }
-    }
-
-    public String getValue() {
-        return value;
-    }
-
-    public void setValue(String value) {
-        if (value != null) {
-            this.value = value;
+            super.setValue(word.getValue());
         }
     }
 
@@ -40,16 +30,16 @@ public class Word implements SimpleTextElement {
         if (this == o) {return true;}
         if (o == null || getClass() != o.getClass()) {return false;}
         Word word = (Word) o;
-        return Objects.equals(value, word.value);
+        return Objects.equals(super.getValue(), word.getValue());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(value);
+        return Objects.hash(super.getValue());
     }
 
     @Override
     public String toString() {
-        return value;
+        return super.getValue();
     }
 }
