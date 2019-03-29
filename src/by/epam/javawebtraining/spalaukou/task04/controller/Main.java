@@ -22,7 +22,7 @@ public class Main {
         logger.trace("App has been launched.");
 
         //Initializing printer
-        Printable printer = PrinterCreator.create(PrinterCreator.printerType.CONSOLE);
+        Printable printer = PrinterCreator.create(PrinterCreator.printerType.FILE);
         logger.trace("Printer has been created.");
 
         //Reading text from file
@@ -39,7 +39,7 @@ public class Main {
         logger.trace("Book has been created.");
 
         //Extracting Book
-        //printer.print(book);
+        printer.print(book);
 
         //Sorting book
         SentenceSorter sentenceSorter = new SentenceSorter();
@@ -58,6 +58,5 @@ public class Main {
         sentenceSorter.sort(book);
 
         logger.trace("App has been finished.");
-
     }
 }

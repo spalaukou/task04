@@ -1,6 +1,9 @@
 package by.epam.javawebtraining.spalaukou.task04.logic.parser;
 
+import by.epam.javawebtraining.spalaukou.task04.logic.creator.BookCreator;
+import by.epam.javawebtraining.spalaukou.task04.logic.reader.DataReader;
 import by.epam.javawebtraining.spalaukou.task04.model.entity.*;
+import by.epam.javawebtraining.spalaukou.task04.model.exception.TechnicalException;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -47,4 +50,19 @@ public class BookParserTest {
 
         assertEquals(book, book2);
     }
+
+    @Test
+    public void testParseWholeBook() {
+        String initialText = "";
+        try {
+            initialText = DataReader.readFile("input\\inputData.txt");
+        } catch (TechnicalException e) {
+            e.printStackTrace();
+        }
+
+        TextComposite book = BookCreator.create(initialText);
+
+        assertEquals(initialText, book.toString());
+    }
+
 }

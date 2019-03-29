@@ -10,10 +10,11 @@ import java.util.Objects;
  */
 
 public class Paragraph implements TextComposite {
-    private static final String NAME = "Paragraph";
-    private List<SimpleTextElement> sentences = new ArrayList<>();
+    private List<SimpleTextElement> sentences;
 
-    public Paragraph() {}
+    public Paragraph() {
+        sentences = new ArrayList<>();
+    }
 
     public Paragraph(List<SimpleTextElement> sentences) {
         this.sentences = sentences;
@@ -28,11 +29,6 @@ public class Paragraph implements TextComposite {
     @Override
     public List<SimpleTextElement> getChildren() {
         return sentences;
-    }
-
-    @Override
-    public String getTextElementName() {
-        return NAME;
     }
 
     @Override
@@ -68,7 +64,7 @@ public class Paragraph implements TextComposite {
         for(SimpleTextElement simpleTextElement : sentences) {
             stringBuilder.append(simpleTextElement);
         }
-        stringBuilder.append("\r\n");
+        stringBuilder.append("\n");
         return stringBuilder.toString();
     }
 }

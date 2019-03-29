@@ -72,14 +72,6 @@ public class SentenceTest {
   }
 
   @Test
-  public void testGetTextElementName() {
-    String expected = "Sentence";
-    String actual = this.expected.getTextElementName();
-
-    assertEquals(expected, actual);
-  }
-
-  @Test
   public void testGetChildren() {
     List<SimpleTextElement> expected = new ArrayList<>();
     expected.add(new Word("Hello"));

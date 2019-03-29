@@ -34,14 +34,6 @@ public class WordTest {
   }
 
   @Test
-  public void testGetTextElementName() {
-    String expected = "Word";
-    String actual = this.expected.getTextElementName();
-
-    assertEquals(expected, actual);
-  }
-
-  @Test
   public void testGetValue() {
     String expected = "Hello";
     String actual = this.expected.getValue();

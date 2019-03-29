@@ -10,10 +10,10 @@ import java.util.Objects;
  */
 
 public class Sentence implements TextComposite {
-    private static final String NAME = "Sentence";
-    private List<SimpleTextElement> simpleTextElements = new ArrayList<>();
+    private List<SimpleTextElement> simpleTextElements;
 
     public Sentence() {
+        simpleTextElements = new ArrayList<>();
     }
 
     public Sentence(List<SimpleTextElement> simpleTextElements) {
@@ -26,11 +26,6 @@ public class Sentence implements TextComposite {
         if (sentence != null) {
             this.simpleTextElements = sentence.getChildren();
         }
-    }
-
-    @Override
-    public String getTextElementName() {
-        return NAME;
     }
 
     @Override

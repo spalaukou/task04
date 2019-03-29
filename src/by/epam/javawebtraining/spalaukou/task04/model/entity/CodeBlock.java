@@ -8,7 +8,6 @@ import java.util.Objects;
  */
 
 public class CodeBlock implements SimpleTextElement {
-    private static final String NAME = "Code Block";
     private String value;
 
     public CodeBlock() {}
@@ -23,11 +22,6 @@ public class CodeBlock implements SimpleTextElement {
         if (codeBlock != null) {
             this.value = codeBlock.getValue();
         }
-    }
-
-    @Override
-    public String getTextElementName() {
-        return NAME;
     }
 
     public String getValue() {
@@ -55,7 +49,7 @@ public class CodeBlock implements SimpleTextElement {
 
     @Override
     public String toString() {
-        return value + "\r\n";
+        return value + "\n";
     }
 
 }

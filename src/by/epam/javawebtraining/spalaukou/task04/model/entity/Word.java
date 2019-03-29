@@ -8,7 +8,6 @@ import java.util.Objects;
  */
 
 public class Word implements SimpleTextElement {
-    private static final String NAME = "Word";
     private String value;
 
     public Word() {
@@ -24,11 +23,6 @@ public class Word implements SimpleTextElement {
         if(word != null) {
             this.value = word.getValue();
         }
-    }
-
-    @Override
-    public String getTextElementName() {
-        return NAME;
     }
 
     public String getValue() {

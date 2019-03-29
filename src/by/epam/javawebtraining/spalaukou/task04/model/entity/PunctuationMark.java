@@ -8,7 +8,6 @@ import java.util.Objects;
  */
 
 public class PunctuationMark implements SimpleTextElement {
-    private static final String NAME = "Punctuation Mark";
     private String value;
 
     public PunctuationMark() {
@@ -24,11 +23,6 @@ public class PunctuationMark implements SimpleTextElement {
         if (punctuationMark != null) {
             this.value = punctuationMark.getValue();
         }
-    }
-
-    @Override
-    public String getTextElementName() {
-        return NAME;
     }
 
     public String getValue() {

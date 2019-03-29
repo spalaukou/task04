@@ -6,5 +6,4 @@ package by.epam.javawebtraining.spalaukou.task04.model.entity;
  */
 
 public interface SimpleTextElement {
-  String getTextElementName();
 }

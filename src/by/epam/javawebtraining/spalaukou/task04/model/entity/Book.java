@@ -10,10 +10,11 @@ import java.util.Objects;
  */
 
 public class Book implements TextComposite {
-    private static final String NAME = "Book";
-    private List<SimpleTextElement> lines = new ArrayList<>();
+    private List<SimpleTextElement> lines;
 
-    public Book() {}
+    public Book() {
+        lines = new ArrayList<>();
+    }
 
     public Book(List<SimpleTextElement> lines) {
         if(lines != null) {
@@ -23,7 +24,7 @@ public class Book implements TextComposite {
 
     public Book(TextComposite book) {
         if (book != null) {
-            this.lines = ((Book) book).getChildren();
+            this.lines = book.getChildren();
         }
     }
 
@@ -36,11 +37,6 @@ public class Book implements TextComposite {
         if(lines != null) {
             this.lines = lines;
         }
-    }
-
-    @Override
-    public String getTextElementName() {
-        return NAME;
     }
 
     @Override
@@ -76,7 +72,7 @@ public class Book implements TextComposite {
         for(SimpleTextElement simpleTextElement : lines) {
             stringBuilder.append(simpleTextElement);
         }
-        stringBuilder.delete(stringBuilder.length() - 2, stringBuilder.length());
+        stringBuilder.delete(stringBuilder.length() - 1, stringBuilder.length());
         return stringBuilder.toString();
     }
 }
